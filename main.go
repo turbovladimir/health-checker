@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 )
 
 type Config struct {
@@ -22,7 +23,7 @@ func main() {
 			},
 		},
 	}
-	sender := NewSender("7347129568:AAEzHLjzZvWXxZF0FcEY5NNs0Hepm6KI3Co")
+	sender := NewSender(os.Getenv("TG_BOT_TOKEN"))
 
 	for _, serviceConfig := range conf.rows {
 
